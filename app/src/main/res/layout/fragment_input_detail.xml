@@ -21,8 +21,9 @@
         <EditText
             android:id="@+id/editor_category"
             android:imeOptions="actionDone"
+            android:singleLine="true"
             android:gravity="center_vertical|right"
-            style="@style/KakeiboItemEditor"/>
+            style="@style/KakeiboItemEditor" />
 
     </LinearLayout>
 

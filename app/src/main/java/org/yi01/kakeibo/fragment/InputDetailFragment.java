@@ -28,6 +28,8 @@ public class InputDetailFragment extends AbstractFragment implements AbstractFra
                 , this
         );
 
+        requestFocus((EditText) root.findViewById(R.id.editor_category));
+
         return root;
     }
 

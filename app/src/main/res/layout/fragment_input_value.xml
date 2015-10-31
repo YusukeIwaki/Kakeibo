@@ -16,6 +16,7 @@
             android:id="@+id/editor_value"
             android:inputType="numberDecimal"
             android:imeOptions="actionDone"
+            android:singleLine="true"
             android:gravity="center_vertical|right"
             style="@style/KakeiboItemEditor"/>
         <TextView

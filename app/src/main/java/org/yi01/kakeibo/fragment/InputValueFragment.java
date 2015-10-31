@@ -51,6 +51,8 @@ public class InputValueFragment extends AbstractFragment implements AbstractFrag
                 , this
         );
 
+        requestFocus((EditText) root.findViewById(R.id.editor_value));
+
         return root;
     }
 

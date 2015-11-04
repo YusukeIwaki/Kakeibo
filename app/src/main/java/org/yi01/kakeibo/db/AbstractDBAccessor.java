@@ -3,6 +3,7 @@ package org.yi01.kakeibo.db;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.provider.BaseColumns;
 
 import java.util.ArrayList;
 
@@ -40,9 +41,21 @@ abstract class AbstractDBAccessor<T extends AbstractModel> {
         return null;
     }
 
+    private static long getIdWithRowId(SQLiteDatabase db, String table, long rowId) {
+        long id = -1;
+        if (rowId >= 0) {
+            Cursor c = db.query(table, new String[]{BaseColumns._ID}, "ROWID=?", new String[]{Long.toString(rowId)}, null, null, null);
+            if (c != null && c.moveToNext()) {
+                id = c.getLong(0);
+            }
+        }
+        return id;
+    }
+
     public void put(T instance){
         ContentValues values = createContentValue(instance);
-        mDb.replace(mTableName, null, values);
+        long rowId = mDb.replace(mTableName, null, values);
+        instance.id = getIdWithRowId(mDb, mTableName, rowId);
     }
 
     public int delete(T instance){

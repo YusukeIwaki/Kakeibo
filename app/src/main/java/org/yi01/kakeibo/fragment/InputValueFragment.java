@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import org.yi01.kakeibo.R;
+import org.yi01.kakeibo.db.Category;
 import org.yi01.kakeibo.db.DatabaseHelper;
 import org.yi01.kakeibo.db.Pay;
 
@@ -67,15 +68,18 @@ public class InputValueFragment extends AbstractFragment implements AbstractFrag
 
     }
 
-    private void submit(String category, int value) {
+    private void submit(final String category, int value) {
         final Pay pay = new Pay();
-        pay.itemname = category;
+        //pay.categoryIdはこの時点ではわからない
         pay.yen = value;
         pay.datetime = System.currentTimeMillis();
 
-        DatabaseHelper.write(getActivity(), new DatabaseHelper.DBCallback<Object>() {
+        DatabaseHelper.writeWithTransaction(getActivity(), new DatabaseHelper.DBCallback<Object>() {
             @Override
             public Object process(SQLiteDatabase db) {
+                Category c = Category.getOrCreate(db, category);
+                c.put(db);
+                pay.categoryId = c.id;
                 pay.put(db);
 
                 gotoFirstView();

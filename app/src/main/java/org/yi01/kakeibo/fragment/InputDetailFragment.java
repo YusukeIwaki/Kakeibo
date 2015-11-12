@@ -13,7 +13,7 @@ import android.widget.EditText;
 
 import org.yi01.kakeibo.R;
 
-public class InputDetailFragment extends AbstractFragment implements AbstractFragment.OnSubmitListener {
+public class InputDetailFragment extends AbstractInputDataFragment implements AbstractInputDataFragment.OnSubmitListener {
 
     public InputDetailFragment(){}
 

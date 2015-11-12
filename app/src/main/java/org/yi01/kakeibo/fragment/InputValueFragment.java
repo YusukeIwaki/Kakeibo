@@ -16,7 +16,7 @@ import org.yi01.kakeibo.db.Category;
 import org.yi01.kakeibo.db.DatabaseHelper;
 import org.yi01.kakeibo.db.Pay;
 
-public class InputValueFragment extends AbstractFragment implements AbstractFragment.OnSubmitListener {
+public class InputValueFragment extends AbstractInputDataFragment implements AbstractInputDataFragment.OnSubmitListener {
 
     private String mCategory;
 

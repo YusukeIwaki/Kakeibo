@@ -16,17 +16,17 @@ import org.yi01.kakeibo.R;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CategorySelectionFragment extends AbstractFragment{
+public class CategorySelectionFragment extends AbstractInputDataFragment {
 
     public CategorySelectionFragment(){}
 
     public HashMap<Integer, String> LABEL = new HashMap<Integer, String>(){
         {
-            put(R.id.btn_conveni,"コンビニ");
-            put(R.id.btn_eatout,"外食");
-            put(R.id.btn_fare,"交通費");
-            put(R.id.btn_misc,"その他");
-            put(R.id.btn_supermarket,"ライフ");
+            put(R.id.btn_right_top,"コンビニ");
+            put(R.id.btn_left_bottom,"外食");
+            put(R.id.btn_left_top,"交通費");
+            put(R.id.btn_center,"その他");
+            put(R.id.btn_right_bottom,"ライフ");
         }
     };
 
@@ -64,7 +64,7 @@ public class CategorySelectionFragment extends AbstractFragment{
 
     private Fragment makeFragmentForId(int id) {
         // その他.
-        if (id==R.id.btn_misc) return new InputDetailFragment();
+        if (id==R.id.btn_center) return new InputDetailFragment();
 
 
         Bundle bundle = new Bundle();

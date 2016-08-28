@@ -25,6 +25,7 @@ public class CategorySelectionFragment extends AbstractFragment{
             put(R.id.btn_conveni,"コンビニ");
             put(R.id.btn_eatout,"外食");
             put(R.id.btn_fare,"交通費");
+            put(R.id.btn_baby,"baby");
             put(R.id.btn_misc,"その他");
             put(R.id.btn_supermarket,"ライフ");
         }

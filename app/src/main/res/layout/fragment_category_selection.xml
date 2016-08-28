@@ -30,10 +30,16 @@
         android:orientation="horizontal"
         android:gravity="center">
         <Button
-            android:id="@+id/btn_misc"
-            android:layout_width="216dp"
+            android:id="@+id/btn_baby"
+            android:layout_width="96dp"
             android:layout_height="96dp"
-            android:layout_margin="24dp"/>
+            android:layout_margin="16dp"/>
+
+        <Button
+            android:id="@+id/btn_misc"
+            android:layout_width="208dp"
+            android:layout_height="96dp"
+            android:layout_margin="16dp"/>
     </LinearLayout>
 
     <LinearLayout
